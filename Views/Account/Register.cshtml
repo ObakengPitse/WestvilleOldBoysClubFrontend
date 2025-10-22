@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg border-0 rounded-4 overflow-hidden" style="max-width: 900px; width: 100%;">
+        <div class="row g-0">
+            <!-- Left Panel -->
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-white text-center p-5" style="background-color: #0d3b66;">
+                <h2 class="fw-bold mb-3">Welcome Back!</h2>
+                <p class="mb-4">To keep connected with us please login with your personal info</p>
+                <a asp-controller="Account" asp-action="Login" class="btn btn-outline-light rounded-pill px-4">LOG IN</a>
+            </div>
+
+            <!-- Right Panel (Register Form) -->
+            <div class="col-md-6 p-5 bg-white">
+                <h2 class="fw-bold mb-4 text-center">Create Account</h2>
+
+                <div class="d-flex justify-content-center mb-3">
+                    <button class="btn btn-outline-secondary mx-2"><i class="fab fa-facebook-f"></i></button>
+                    <button class="btn btn-outline-secondary mx-2"><i class="fab fa-google-plus-g"></i></button>
+                    <button class="btn btn-outline-secondary mx-2"><i class="fab fa-linkedin-in"></i></button>
+                </div>
+
+                <p class="text-center small text-muted mb-4">or use your email for registration</p>
+
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <input type="text" id="name" class="form-control" placeholder="Name" required />
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" id="email" class="form-control" placeholder="Email" required />
+                    </div>
+                    <div class="mb-4">
+                        <input type="password" id="password" class="form-control" placeholder="Password" required />
+                    </div>
+                    <button type="submit" class="btn w-100 text-white fw-semibold rounded-pill" style="background-color:#0d3b66;">SIGN UP</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const fullName = document.getElementById("name").value;
+            const emailAddress = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const payload = { fullName, emailAddress, password };
+
+            try {
+                const response = await fetch("http://localhost:8080/auth/api/v1/register", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    alert("Registration successful! Redirecting to login...");
+                    window.location.href = "/Account/Login";
+                } else {
+                    const error = await response.json();
+                    alert(error.message || "Registration failed.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Something went wrong. Please try again later.");
+            }
+        });
+    </script>
+}

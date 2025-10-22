@@ -7,7 +7,10 @@
 
     // === 1. Restrict navigation if not logged in ===
     const isLoginPage = window.location.pathname.toLowerCase().includes("/account/login");
-    if (!userId && !isLoginPage) {
+    const isRegisterPage = window.location.pathname.toLowerCase().includes("/account/register");
+    const isAdminLoginPage = window.location.pathname.toLowerCase().includes("/account/adminlogin");
+
+    if (!userId && !(isLoginPage || isRegisterPage || isAdminLoginPage)) {
         window.location.href = "/Account/Login";
         return;
     }

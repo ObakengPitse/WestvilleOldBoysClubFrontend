@@ -17,7 +17,7 @@
         var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
 
         bool hideNavbar = currentController == "Account" &&
-        (currentAction == "Login" || currentAction == "Register");
+        (currentAction == "Login" || currentAction == "Register" || currentAction == "AdminLogin");
     }
 
     @if (!hideNavbar)

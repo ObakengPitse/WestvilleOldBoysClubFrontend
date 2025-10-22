@@ -11,21 +11,15 @@ namespace WestvilleOldBoysClub.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        [HttpGet]
+        public IActionResult Register()
         {
-            if (!ModelState.IsValid)
-                return View(model);
+            return View();
+        }
 
-            // TODO: Replace with actual authentication logic
-            if (model.Email == "admin@example.com" && model.Password == "Password123")
-            {
-                // Redirect to dashboard or home
-                return RedirectToAction("Index", "Home");
-            }
-
-            ModelState.AddModelError("", "Invalid email or password.");
-            return View(model);
+        public IActionResult AdminLogin()
+        {
+            return View();
         }
 
         public IActionResult Logout()

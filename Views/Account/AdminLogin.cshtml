@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "AdminLogin";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -8,7 +8,7 @@
         <div class="row g-0 flex-column flex-md-row">
             <!-- Left Panel (Login Form) -->
             <div class="col-md-6 bg-white d-flex flex-column justify-content-center p-4 p-md-5">
-                <h3 class="fw-bold text-center mb-4">Log in</h3>
+                <h3 class="fw-bold text-center mb-4">Admin Log in</h3>
 
                 <div class="d-flex justify-content-center mb-3 gap-2">
                     <button class="btn btn-outline-secondary"><i class="fab fa-facebook-f"></i></button>
@@ -38,29 +38,21 @@
 
             <!-- Right Panel -->
             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-center p-4 p-md-5" style="background-color:#0d3b66;">
-                <h2 class="fw-bold mb-3 text-white">Hello, Friend!</h2>
-
+                <h2 class="fw-bold mb-3 text-white">Hello, Admin!</h2>
+         
                 <p class="mb-4 text-light small px-3">
-                    Enter your personal details and start your journey with us today.
+                    Want to switch to a regular user account? Use the button below to log in as a user.
                 </p>
 
-                <a asp-controller="Account" asp-action="Register"
-                   class="btn btn-light btn-lg rounded-pill d-flex align-items-center justify-content-center px-4 py-2 shadow-sm transition-hover mb-3">
-                    SIGN UP <i class="fas fa-user-plus ms-2"></i>
+                <a asp-controller="Account" asp-action="Login"
+                   class="btn btn-light btn-lg rounded-pill d-flex align-items-center justify-content-center px-4 py-2 shadow-sm transition-hover">
+                    User Login
+                    <i class="fas fa-arrow-right ms-2"></i>
                 </a>
 
-                <div class="mt-5 text-light small px-3">
-                    <p class="mb-2">Are you an admin? Click the button below:</p>
-                    <a asp-controller="Account" asp-action="AdminLogin"
-                       class="btn btn-outline-light btn-lg rounded-pill d-flex align-items-center justify-content-center px-4 py-2 transition-hover">
-                        Admin Login <i class="fas fa-user-shield ms-2"></i>
-                    </a>
+                <div class="mt-5 text-light small opacity-75">
+                    <i class="fas fa-user"></i> Switch easily between admin and user accounts
                 </div>
-
-                <div class="mt-4 text-light small opacity-75 px-3">
-                    Easily switch between user and admin accounts whenever needed.
-                </div>
-
             </div>
 
         </div>
@@ -68,5 +60,5 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/login.js"></script>
+    <script src="~/js/adminLogin.js"></script>
 }
