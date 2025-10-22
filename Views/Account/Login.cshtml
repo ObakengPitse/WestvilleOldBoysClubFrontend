@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-container">
+    <!-- Left side -->
+    <div class="login-left">
+        <h3 class="fw-bold text-center mb-4">Log in</h3>
+
+        <div class="text-center social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-google"></i>
+            <i class="fab fa-linkedin-in"></i>
+        </div>
+
+        <p class="text-center text-muted small mb-3">or use your account</p>
+
+        <form id="loginForm">
+            <div class="mb-3">
+                <input id="email" type="email" class="form-control" placeholder="Email" required />
+            </div>
+            <div class="mb-3">
+                <input id="password" type="password" class="form-control" placeholder="Password" required />
+            </div>
+            <div class="text-end mb-3">
+                <a href="#" class="text-muted small">Forgot your password?</a>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-login">LOG IN</button>
+            </div>
+        </form>
+
+        <div id="loginMessage" class="text-center mt-3 fw-semibold"></div>
+    </div>
+
+    <!-- Right side -->
+    <div class="login-right">
+        <h2>Hello, Friend!</h2>
+        <p>Enter your personal details and start<br />journey with us</p>
+        <a asp-controller="Account" asp-action="Register" class="btn">SIGN UP</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/login.js"></script>
+}
