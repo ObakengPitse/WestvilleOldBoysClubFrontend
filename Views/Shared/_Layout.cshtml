@@ -23,7 +23,7 @@
     @if (!hideNavbar)
     {
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-custom">
+        <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold text-white" asp-controller="Home" asp-action="Index">
                     Westville Old Boys Club
@@ -38,8 +38,6 @@
                         <li class="nav-item"><a class="nav-link text-white" asp-controller="Schedule" asp-action="Index">Schedule</a></li>
                         <li class="nav-item"><a class="nav-link text-white" asp-controller="Stats" asp-action="Index">Statistics</a></li>
                         <li class="nav-item"><a class="nav-link text-white" asp-controller="Restaurant" asp-action="Index">Restaurant</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Customer" asp-action="Index">Customer</a></li>
-
                         <!-- Logout button -->
                         <li class="nav-item ms-3">
                             <button id="logoutBtn" class="btn btn-outline-light btn-sm d-none">

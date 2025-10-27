@@ -1,8 +1,378 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Westville Old Boys Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        .navbar {
+            background-color: #1a3e6a;
+        }
+
+        .navbar-brand, .nav-link, .navbar-toggler {
+            color: white !important;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        header {
+            background: url('https://st10465727cldv7112w.blob.core.windows.net/imagestorage/wob.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 350px 50px;
+        }
+
+            header h1 {
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+        .btn-primary {
+            background-color: #1a3e6a;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #16345c;
+            }
+
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-heading {
+            color: #1a3e6a;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #1a3e6a;
+            color: white;
+            padding: 20px 0;
+        }
+
+            footer a {
+                color: #ffffff;
+            }
+    </style>
+</head>
+<body class="p-0">
+    <!-- Header -->
+    <header id="home">
+        <div class="container">
+            <h1>Where Passion Meets Excellence</h1>
+            <p class="lead">Join the Westville Old Boys Club Football Family</p>
+            <a href="#contact" class="btn btn-primary btn-lg mt-3">Become a Member</a>
+        </div>
+    </header>
+
+    <!-- Meet the Team Carousel -->
+    <section id="team" class="bg-light">
+        <div class="container text-center">
+            <h2 class="section-heading mb-5">Meet the Team</h2>
+            <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/P1.jpg" class="d-block w-100" alt="Team Player">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                            <h5>Determined and Driven</h5>
+                            <p>Our players train with unmatched dedication and unity.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/P2.jpg" class="d-block w-100" alt="Team Unity">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                            <h5>Strength in Unity</h5>
+                            <p>Teamwork and passion drive our success on the field.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/P3.jpg" class="d-block w-100" alt="Focused on Victory">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                            <h5>Focused on Victory</h5>
+                            <p>Each game fuels our desire to be the best we can be.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container text-center">
+            <h2 class="section-heading mb-4">Explore Our Community</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/ezgif.com-webp-to-png-converter.png" class="card-img-top" alt="Training">
+                        <div class="card-body">
+                            <h5 class="card-title">Training in Action</h5>
+                            <p class="card-text">Weekly sessions designed to enhance fitness, focus, and strategy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/P2.jpg" class="card-img-top" alt="Young Talent">
+                        <div class="card-body">
+                            <h5 class="card-title">Developing Young Talent</h5>
+                            <p class="card-text">Empowering the next generation of players through skill and discipline.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/IMG-20240427-WA0029.jpg" class="card-img-top" alt="Highlights">
+                        <div class="card-body">
+                            <h5 class="card-title">Game Highlights</h5>
+                            <p class="card-text">Relive the excitement of our best plays and unforgettable matches.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milestones and Achievements Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading fw-bold">Milestones and Achievements</h2>
+                <h5 class="text-muted">Celebrating our key accomplishments and notable moments throughout the year.</h5>
+            </div>
+
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-6 order-md-1 text-center mb-3 mb-md-0">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/B1.gif"
+                             class="img-fluid rounded-circle border border-3"
+                             alt="Club Performance and Goals" style="width:180px; height:180px; object-fit:cover;">
+                    </div>
+                    <div class="col-md-6 order-md-2">
+                        <h4 class="fw-bold">April 2025</h4>
+                        <h5 class="fw-semibold">Club Performance and Goals</h5>
+                        <p class="text-muted">Our soccer team kicked off the year with impressive performances, winning several matches and showing great teamwork. We aim to build on this momentum and continue striving for excellence in every game.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="row align-items-center flex-md-row-reverse mb-5">
+                    <div class="col-md-6 text-center mb-3 mb-md-0">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/B1.gif"
+                             class="img-fluid rounded-circle border border-3"
+                             alt="Welcoming New Sponsors" style="width:180px; height:180px; object-fit:cover;">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="fw-bold">May 2025</h4>
+                        <h5 class="fw-semibold">Welcoming New Sponsors</h5>
+                        <p class="text-muted">A major milestone as we welcomed new sponsors dedicated to supporting our vision. Their contributions enhance our training facilities and help us provide better equipment for players.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-6 text-center mb-3 mb-md-0">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/B1.gif"
+                             class="img-fluid rounded-circle border border-3"
+                             alt="Community Engagement and Events" style="width:180px; height:180px; object-fit:cover;">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="fw-bold">June 2025</h4>
+                        <h5 class="fw-semibold">Community Engagement and Events</h5>
+                        <p class="text-muted">We launched several community events where fans met players, joined soccer clinics, and enjoyed family-friendly activities — strengthening our bond with local supporters.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="row align-items-center flex-md-row-reverse mb-5">
+                    <div class="col-md-6 text-center mb-3 mb-md-0"> 
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/B1.gif"
+                             class="img-fluid rounded-circle border border-3"
+                             alt="Season Finale and Future Plans" style="width:180px; height:180px; object-fit:cover;">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="fw-bold">July 2025</h4>
+                        <h5 class="fw-semibold">Season Finale and Future Plans</h5>
+                        <p class="text-muted">As the season wrapped up, we celebrated our growth and looked ahead to off-season training and exciting new partnerships. The best is yet to come!</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="row text-center">
+                    <div class="col">
+                        <h4 class="fw-bold mt-4">Be a Part of Our Story!</h4>
+                        <p class="text-muted mb-0">Join us as we continue to grow, compete, and inspire — both on and off the field.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Our Team in Action Section -->
+    <section id="team" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading fw-bold">Our Team in Action</h2>
+                <h5 class="text-muted">Highlights from the Field</h5>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://media.istockphoto.com/id/1413856942/photo/school-children-play-soccer-football-training-game-with-coach-kids-kicking-sports-balls-on.jpg?s=612x612&w=0&k=20&c=MEV4AKmlQx2jg1ndElU5z_5yH1tiOwORryZMKk0PxDQ="
+                             class="card-img-top img-fluid" alt="Team Spirit in Training">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Team Spirit in Training</h5>
+                            <p class="card-text text-muted">Our team’s dedication shines through during training sessions. Every drill and practice builds the camaraderie that makes us formidable.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <small class="text-secondary">Sep 14, 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://media.istockphoto.com/id/481509929/photo/celebrating-the-cup.jpg?s=612x612&w=0&k=20&c=tmYQ18o1mqyvJ6ahXLCMkzX6qWcjSgpaHt4R8jO9JJE="
+                             class="card-img-top img-fluid" alt="Victory Celebration">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Victory Celebration</h5>
+                            <p class="card-text text-muted">Nothing compares to the thrill of victory! Our players celebrate each win, reflecting the unity and determination behind our success.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <small class="text-secondary">Apr 22, 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://st10465727cldv7112w.blob.core.windows.net/imagestorage/C1.jpg"
+                             class="card-img-top img-fluid" alt="Game Day Action">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Game Day Action</h5>
+                            <p class="card-text text-muted">Catch our players in the heat of competition—strategy, skill, and spirit on full display every match.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <small class="text-secondary">Feb 7, 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://media.istockphoto.com/id/1318457199/photo/fans-on-the-stadium-cheering.jpg?s=612x612&w=0&k=20&c=qCnLG1IIhYWiptTbVe2BUXceRZY61PmCxB3pOspkIic="
+                             class="card-img-top img-fluid" alt="Fans in the Stands">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Fans in the Stands</h5>
+                            <p class="card-text text-muted">Our supporters are the heartbeat of every match, filling the stadium with energy and encouragement.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <small class="text-secondary">Mar 5, 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://media.istockphoto.com/id/1271285012/photo/teenage-male-footballers-doing-dribbling-drills-on-field.jpg?s=612x612&w=0&k=20&c=nUoDqDTKgBtn2YmjhnuMbTk1ougDo-o8uF_4F6V3u00="
+                             class="card-img-top img-fluid" alt="Training Camp Highlights">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Training Camp Highlights</h5>
+                            <p class="card-text text-muted">Our camps push players to reach new heights, focusing on teamwork, tactics, and technical precision.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <small class="text-secondary">Jun 2, 2025</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://media.istockphoto.com/id/2048705042/photo/keeping-up-the-volunteer-energy.jpg?s=612x612&w=0&k=20&c=zpG_t7MBjqhEXewlemi5xNDIq5zD7UgfSO-pmxocsTo="
+                             class="card-img-top img-fluid" alt="Community Outreach">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Community Outreach</h5>
+                            <p class="card-text text-muted">Our players actively give back—supporting local events and promoting teamwork beyond the pitch.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <small class="text-secondary">Jul 29, 2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading">Contact Us</h2>
+                <h5 class="text-muted">We’d love to hear from you</h5>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form action="mailto:admin@westvilloldboys.com" method="post" enctype="text/plain">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name *" name="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email *" name="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message *" name="Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-4 py-2">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mb-0 con">
+        <div class="container">
+            <p class="mb-1">© 2025 Westville Old Boys Club</p>
+            <div>
+                <a href="https://www.facebook.com/WestvilleOldBoysSportsClub/" class="me-3"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/w.o.b_rugby_club/?hl=en" class="me-3"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
