@@ -54,7 +54,7 @@
             const payload = { fullName, emailAddress, password };
 
             try {
-                const response = await fetch("http://localhost:8080/auth/api/v1/register", {
+                const response = await fetch("https://wob-soccer-website.onrender.com/auth/api/v1/register", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload)

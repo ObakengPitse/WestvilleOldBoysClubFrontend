@@ -12,7 +12,7 @@
         messageBox.style.color = "gray";
 
         try {
-            const response = await fetch("http://localhost:8080/auth/api/v1/admin/login", {
+            const response = await fetch("https://wob-soccer-website.onrender.com/auth/api/v1/admin/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
