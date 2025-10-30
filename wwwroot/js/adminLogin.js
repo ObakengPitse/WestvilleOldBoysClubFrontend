@@ -41,7 +41,7 @@
 
                 // Redirect after short delay
                 setTimeout(() => {
-                    window.location.href = "/Home/Index";
+                    window.location.href = "/Admin/AdminDashboard";
                 }, 1500);
             } else {
                 messageBox.textContent = "Login failed. Please check your credentials.";

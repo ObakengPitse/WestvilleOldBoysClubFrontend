@@ -16,8 +16,8 @@
         var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
         var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
 
-        bool hideNavbar = currentController == "Account" &&
-        (currentAction == "Login" || currentAction == "Register" || currentAction == "AdminLogin");
+        bool hideNavbar = ((currentController == "Account" || currentController == "Home" || currentController == "Admin") &&
+        (currentAction == "Login" || currentAction == "Register" || currentAction == "AdminLogin" || currentAction == "Statistics" || currentAction == "AdminDashboard" || currentAction == "Resturant"));
     }
 
     @if (!hideNavbar)
@@ -34,10 +34,9 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item"><a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="nav-item admin-link"><a class="nav-link text-white" asp-controller="Admin" asp-action="Index">Admin</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Schedule" asp-action="Index">Schedule</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Stats" asp-action="Index">Statistics</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Restaurant" asp-action="Index">Restaurant</a></li>
+                        <li class="nav-item admin-link"><a class="nav-link text-white" asp-controller="Admin" asp-action="AdminDashboard">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Home" asp-action="Statistics">Statistics</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Home" asp-action="Resturant">Resturant</a></li>
                         <!-- Logout button -->
                         <li class="nav-item ms-3">
                             <button id="logoutBtn" class="btn btn-outline-light btn-sm d-none">

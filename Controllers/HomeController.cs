@@ -18,6 +18,16 @@ namespace WestvilleOldBoysClub.Controllers
             return View();
         }
 
+        public IActionResult Statistics()
+        {
+            return View();
+        }
+
+        public IActionResult Resturant()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

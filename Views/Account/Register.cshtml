@@ -27,10 +27,13 @@
 
                 <form id="registerForm">
                     <div class="mb-3">
-                        <input type="text" id="name" class="form-control" placeholder="Name" required />
+                        <input type="text" id="name" class="form-control" placeholder="Full name" required />
                     </div>
                     <div class="mb-3">
                         <input type="email" id="email" class="form-control" placeholder="Email" required />
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" id="phone" class="form-control" placeholder="Phone number" required />
                     </div>
                     <div class="mb-4">
                         <input type="password" id="password" class="form-control" placeholder="Password" required />
@@ -49,9 +52,10 @@
 
             const fullName = document.getElementById("name").value;
             const emailAddress = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
             const password = document.getElementById("password").value;
 
-            const payload = { fullName, emailAddress, password };
+            const payload = { fullName, emailAddress, phone, password };
 
             try {
                 const response = await fetch("https://wob-soccer-website.onrender.com/auth/api/v1/register", {

@@ -1,0 +1,1028 @@
+﻿@{
+    ViewData["Title"] = "ResturantHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>TastyTreats - Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+    <!-- ionicon link -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link href="./CSS/Z.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="top">
+
+    <header class="header" data-header>
+        <div class="container">
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list" style="margin-left:240px;">
+                    <li class="navbar-item">
+                        <a href="UserRegistration.aspx" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+                            <span class="span">UserRegistration</span>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="Statistics.aspx" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+                            <span class="span">Statistics</span>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="R.aspx" class="navbar-link hover-underline ">
+                            <div class="separator"></div>
+                            <span class="span">Home</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <a href="#" class="btn btn-secondary">
+                <span class="text text-1">Find A Table</span>
+                <span class="text text-2" aria-hidden="true">Find A Table</span>
+            </a>
+
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+
+            <div class="overlay" data-nav-toggler data-overlay></div>
+
+        </div>
+    </header>
+
+
+    <main>
+        <article>
+
+    <!-- HERO SECTION -->
+    <section class="hero text-center" aria-label="home" id="home" style="height:100px;">
+        <ul class="hero-slider" data-hero-slider>
+            <li class="slider-item active" data-hero-slider-item>
+                <div class="slider-bg">
+                    <img src="./images/hero-slider-1.jpg" width="1780" height="850" alt="" class="img-cover">
+                </div>
+                <p class="label-2 section-subtitle slider-reveal" style="color:white;">Tradational & Hygine</p>
+                <h1 class="display-1 hero-title slider-reveal">
+                    For the love of <br>
+                    delicious food
+                </h1>
+                <p class="body-2 hero-text slider-reveal">
+                    Come with family & feel the joy of mouthwatering food
+                </p>
+                <a href="#" class="btn btn-primary slider-reveal">
+                    <span class="text text-1" style="color:white;">View Our Menu</span>
+                    <span class="text text-2" aria-hidden="true">View Our Menu</span>
+                </a>
+            </li>
+
+            <li class="slider-item" data-hero-slider-item>
+                <div class="slider-bg">
+                    <img src="./images/hero-slider-2.jpg" width="1780" height="550" alt="" class="img-cover">
+                </div>
+                <p class="label-2 section-subtitle slider-reveal" style="color:white;">delightful experience</p>
+                <h1 class="display-1 hero-title slider-reveal">
+                    Flavors Inspired by <br>
+                    the Seasons
+                </h1>
+                <p class="body-2 hero-text slider-reveal">
+                    Come with family & feel the joy of mouthwatering food
+                </p>
+                <a href="#" class="btn btn-primary slider-reveal">
+                    <span class="text text-1" style="color:white;">View Our Menu</span>
+                    <span class="text text-2" aria-hidden="true">View Our Menu</span>
+                </a>
+            </li>
+
+            <li class="slider-item" data-hero-slider-item>
+                <div class="slider-bg">
+                    <img src="./images/hero-slider-3.jpg" width="1780" height="550" alt="" class="img-cover">
+                </div>
+                <p class="label-2 section-subtitle slider-reveal" style="color:white;">amazing & delicious</p>
+                <h1 class="display-1 hero-title slider-reveal">
+                    Where every flavor <br>
+                    tells a story
+                </h1>
+                <p class="body-2 hero-text slider-reveal">
+                    Come with family & feel the joy of mouthwatering food
+                </p>
+                <a href="#" class="btn btn-primary slider-reveal">
+                    <span class="text text-1" style="color:white;">View Our Menu</span>
+                    <span class="text text-2" aria-hidden="true">View Our Menu</span>
+                </a>
+            </li>
+        </ul>
+
+        <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+            <ion-icon name="chevron-back"></ion-icon>
+        </button>
+
+        <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+            <ion-icon name="chevron-forward"></ion-icon>
+        </button>
+
+        <a href="#" class="hero-btn has-after">
+            <img src="./images/hero-icon.png" width="48" height="48" alt="booking icon">
+            <span class="label-2 text-center span">Book A Table</span>
+        </a>
+    </section>
+
+    <!-- SERVICE SECTION -->
+    <section class="section service bg-black-10 text-center" aria-label="service">
+        <div class="container">
+            <p class="section-subtitle label-2" style="color:white;">Flavors For Royalty</p>
+            <h2 class="headline-1 section-title">We Offer Top Notch</h2>
+            <p class="section-text">
+                We offer top-notch dining experiences at our mobile restaurant, specially curated for the vibrant community of athletes, guests,
+                and parents at our school. Our menu is designed to fuel your active lifestyle with delicious and nutritious meals that cater to
+                your taste buds and nutritional needs. From energizing snacks to hearty meals, we strive to provide exceptional quality and variety,
+                ensuring that every bite is a delightful experience. Join us for a culinary journey that combines flavor, freshness, and convenience,
+                making every mealtime a memorable occasion.
+            </p>
+
+            <ul class="grid-list">
+                <li>
+                    <div class="service-card">
+                        <a href="#" class="has-before hover:shine">
+                            <figure class="card-banner img-holder">
+                                <img src="./images/Healthy Snacks.jpg" width="300" height="200" loading="lazy" alt="Breakfast" class="img-cover">
+                            </figure>
+                        </a>
+                        <div class="card-content">
+                            <h3 class="title-4 card-title">
+                                <a href="#">Healthy Snacks</a>
+                            </h3>
+                            <a href="#" class="btn-text hover-underline label-2">View Menu</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-card">
+                        <a href="#" class="has-before hover:shine">
+                            <figure class="card-banner img-holder">
+                                <img src="./images/service-2.jpg" width="200" height="200" loading="lazy" alt="Appetizers" class="img-cover">
+                            </figure>
+                        </a>
+                        <div class="card-content">
+                            <h3 class="title-4 card-title">
+                                <a href="#">Main Meals</a>
+                            </h3>
+                            <a href="#" class="btn-text hover-underline label-2">View Menu</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="service-card">
+                        <a href="#" class="has-before hover:shine">
+                            <figure class="card-banner img-holder">
+                                <img src="./images/Sandwiches and Wraps.jpg" width="300" height="200" loading="lazy" alt="Sandwiches and Wraps" class="img-cover">
+                            </figure>
+                        </a>
+                        <div class="card-content">
+                            <h3 class="title-4 card-title">
+                                <a href="#">Sandwiches and Wraps</a>
+                            </h3>
+                            <a href="#" class="btn-text hover-underline label-2">View Menu</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="service-card">
+                        <a href="#" class="has-before hover:shine">
+                            <figure class="card-banner img-holder">
+                                <img src="./images/Salads.jpg" width="300" height="200" loading="lazy" alt="Salads" class="img-cover">
+                            </figure>
+                        </a>
+                        <div class="card-content">
+                            <h3 class="title-4 card-title">
+                                <a href="#">Salads</a>
+                            </h3>
+                            <a href="#" class="btn-text hover-underline label-2">View Menu</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="service-card">
+                        <a href="#" class="has-before hover:shine">
+                            <figure class="card-banner img-holder">
+                                <img src="./images/Drinks.jpg" width="300" height="200" loading="lazy" alt="Drinks" class="img-cover">
+                            </figure>
+                        </a>
+                        <div class="card-content">
+                            <h3 class="title-4 card-title">
+                                <a href="#">Drinks</a>
+                            </h3>
+                            <a href="#" class="btn-text hover-underline label-2">View Menu</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="service-card">
+                        <a href="#" class="has-before hover:shine">
+                            <figure class="card-banner img-holder">
+                                <img src="./images/Treats.jpg" width="300" height="200" loading="lazy" alt="Treats" class="img-cover">
+                            </figure>
+                        </a>
+                        <div class="card-content">
+                            <h3 class="title-4 card-title">
+                                <a href="#">Treats</a>
+                            </h3>
+                            <a href="#" class="btn-text hover-underline label-2">View Menu</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <img src="./images/shape-1.png" width="246" height="412" loading="lazy" alt="shape" class="shape shape-1 move-anim">
+            <img src="./images/shape-2.png" width="343" height="345" loading="lazy" alt="shape" class="shape shape-2 move-anim">
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section class="section menu" aria-label="menu-label" id="menu">
+        <div class="container">
+            <p class="section-subtitle text-center label-2" style="color: white;">Special Selection</p>
+            <h2 class="headline-1 section-title text-center">Healthy Snacks & Sandwiches and Wraps</h2>
+
+            <ul class="grid-list">
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/fruit cupp.jpg" width="100" height="100" loading="lazy" alt="Greek Salad" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Fruit Cups</a>
+                                </h3>
+                                <span class="badge label-1">Seasonal</span>
+                                <span class="span title-2" style="color: white;">R25.50</span>
+                            </div>
+                            <p class="card-text label-1">
+                                A vibrant medley of bite-sized fruits like melons, grapes, strawberries, and kiwi, perfect for a fresh and healthy snack.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Fruit Cups" data-price="25.50">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/S1.jpg" width="100" height="100" loading="lazy" alt="Lasagne" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Turkey and cheese sandwiches</a>
+                                </h3>
+                                <span class="span title-2" style="color: white;">R20.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Slices of lean turkey breast and cheddar cheese layered between whole grain bread, with lettuce, tomato, and a smear of mustard or mayo.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Turkey and cheese sandwiches" data-price="20.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/F3.jpg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Rainbow fruit skewers</a>
+                                </h3>
+                                <span class="span title-2" style="color: white;">R10.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Colorful skewers of assorted fruits, including strawberries, pineapple, kiwi, grapes, and blueberries, arranged to resemble a rainbow.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Rainbow fruit skewers" data-price="10.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/S2.jpg" width="100" height="100" loading="lazy" alt="Tokusen Wagyu" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Chicken Wraps</a>
+                                </h3>
+                                <span class="badge label-1">New</span>
+                                <span class="span title-2" style="color: white;">R39.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Soft tortilla wraps filled with grilled chicken, crisp lettuce, tomatoes, cucumbers, and a drizzle of creamy ranch or Caesar dressing.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Chicken Wraps" data-price="39.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/F2 treats.jpg" width="100" height="100" loading="lazy" alt="Olivas Rellenas" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Yogurt and Granola Treat</a>
+                                </h3>
+                                <span class="span title-2" style="color: white;">R25.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Creamy Greek yogurt topped with crunchy granola, honey, and a sprinkle of fresh berries for a delightful and nutritious snack.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Yogurt and Granola Treat" data-price="25.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/S3.jpg" width="100" height="100" loading="lazy" alt="Opu Fish" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Peanut butter and jelly sandwiches</a>
+                                </h3>
+                                <span class="span title-2" style="color: white;">R49.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Classic sandwiches featuring creamy peanut butter and sweet jelly spread between slices of soft white or whole wheat bread.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Peanut butter and jelly sandwiches" data-price="49.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 class="headline-1 section-title text-center">Main Meals & Drinks</h2>
+
+            <ul class="grid-list">
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/sparghetti.jpg" width="100" height="100" loading="lazy" alt="Greek Salad" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Chicken Spaghetti</a>
+                                </h3>
+                                <span class="badge label-1">Seasonal</span>
+                                <span class="span title-2" style="color: white;">R25.50</span>
+                            </div>
+                            <p class="card-text label-1">
+                                A delicious plate of tender chicken pieces tossed in a rich tomato sauce with garlic, onions, and herbs, served over a bed of al dente spaghetti.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Chicken Spaghetti" data-price="25.50">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/D1.jpg" width="100" height="100" loading="lazy" alt="Lasagne" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Fruit Juices</a>
+                                </h3>
+                                <span class="span title-2" style="color: white;">R40.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Refreshing blends of freshly squeezed oranges, apples, pineapples, and berries, offering a natural burst of flavor and vitamins.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Fruit Juices" data-price="40.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/M2.jpg" width="100" height="100" loading="lazy" alt="Butternut Pumpkin" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Lasagne</a>
+                                </h3>
+                                <span class="span title-2" style="color: white;">R10.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Layers of pasta sheets, seasoned ground beef, creamy ricotta cheese, mozzarella, and marinara sauce, all baked to perfection with a golden cheese topping.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Lasagne" data-price="10.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/D2.jpg" width="100" height="100" loading="lazy" alt="Tokusen Wagyu" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Smoothies</a>
+                                </h3>
+                                <span class="badge label-1">New</span>
+                                <span class="span title-2" style="color: white;">R39.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Creamy, blended drinks made with fresh fruits like bananas, strawberries, and blueberries, mixed with yogurt or almond milk for a nutritious boost.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Smoothies" data-price="39.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/M3.jpg" width="100" height="100" loading="lazy" alt="Olivas Rellenas" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">BBQ Ribs and Fries</a>
+                                </h3>
+                                <span class="span title-2" style="color: white;">R25.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Succulent ribs marinated in a tangy BBQ sauce, slow-cooked until tender, and served with crispy golden fries.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="BBQ Ribs and Fries" data-price="25.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="menu-card hover:card">
+                        <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                            <img src="./images/D3.jpg" width="100" height="100" loading="lazy" alt="Opu Fish" class="img-cover">
+                        </figure>
+                        <div>
+                            <div class="title-wrapper">
+                                <h3 class="title-3">
+                                    <a href="#" class="card-title">Energy Drinks</a>
+                                </h3>
+                                <span class="span title-2" style="color: white;">R49.00</span>
+                            </div>
+                            <p class="card-text label-1">
+                                Fizzy beverages packed with caffeine, vitamins, and sometimes taurine or other ingredients designed to boost energy and alertness.
+                            </p>
+                            <button class="add-to-cart-btn" data-meal="Energy Drinks" data-price="49.00">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="menu-text text-center">
+                During winter daily from <span class="span" style="color: white;">7:00 pm</span> to <span class="span" style="color: white;">9:00 pm</span>
+            </p>
+
+            <a href="#" class="btn btn-primary">
+                <span class="text text-1" style="color: white;">View All Menu</span>
+                <span class="text text-2" aria-hidden="true" style="color: white;">View All Menu</span>
+            </a>
+
+            <img src="./images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape" class="shape shape-2 move-anim">
+            <img src="./images/shape-6.png" width="343" height="345" loading="lazy" alt="shape" class="shape shape-3 move-anim">
+        </div>
+
+        <div>
+            <ul class="honeycomb" lang="es">
+                <li class="honeycomb-cell">
+                    <img class="honeycomb-cell__image" src="https://media.istockphoto.com/id/104704117/photo/restaurant-plates.jpg?s=612x612&w=0&k=20&c=MhFdN_qVgzoHov-kgFx0qWSW0nZht4lZV1zinC3Ea44=">
+                    <div class="honeycomb-cell__title">Half-Price Happiness: Enjoy 50% Off All Entrees!</div>
+                </li>
+                <li class="honeycomb-cell">
+                    <img class="honeycomb-cell__image" src="https://media.istockphoto.com/id/1148049212/photo/a-burger-with-french-f fries-on-the-side-and-a-craft-beer.jpg?s=612x612&w=0&k=20&c=2Vn3U4C4zQ3TfduHHm9lHkNtP0uxEb4LaQeL0Hod19A=">
+                    <div class="honeycomb-cell__title">Savings Feast: Get 50% Off on Select Menu Items!</div>
+                </li>
+                <li class="honeycomb-cell">
+                    <img class="honeycomb-cell__image" src="https://media.istockphoto.com/id/983970694/photo/traditional-mexican-taco-plate-in-the-mexican-caribbean.jpg?s=612x612&w=0&k=20&c=1htvYxKASEoaeWyXy--x0c_0Kb2dUuEoQBkPQ5x1CkM=">
+                    <div class="honeycomb-cell__title">Discount Delights: Half Off Your Favorite Dishes!</div>
+                </li>
+                <li class="honeycomb-cell">
+                    <img class="honeycomb-cell__image" src="https://media.istockphoto.com/id/669793064/photo/grilled-shrimp-tacos.jpg?s=612x612&w=0&k=20&c=8qs2cOIWjcrcn3LAMsF6WIjlK0bZgWsEnNxb7KGIG9s=">
+                    <div class="honeycomb-cell__title">Mega Meal Deal: 50% Off Your Second Course!</div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="section features text-center" aria-label="features">
+        <div class="container">
+            <p class="section-subtitle label-2">Why Choose Us</p>
+            <h2 class="headline-1 section-title">Promoting Health and Performance Through Nutritious Food Choices</h2>
+
+            <div class="main">
+                <h1></h1>
+                <ul class="cards" style="display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0;">
+                    <li class="cards_item" style="width: 33.3333%; padding: 1rem;">
+                        <div class="card" style="background-color: white; border-radius: 0.25rem; display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="card_image" style="height: 200px; overflow: hidden;">
+                                <img src="https://media.istockphoto.com/id/1798035859/photo/half-time-at-the-soccer-game.jpg?s=612x612&w=0&k=20&c=PdynuMcFAt-TQ_JfjlodvyxRyJiD0MVvtP9yRioeNdo=" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="card_content" style="padding: 1rem; background: white;">
+                                <h2 class="card_title">Healthy Eating for Young Athletes</h2>
+                                <p class="card_text">Discusses the importance of balanced nutrition for athletic performance and features tips on what to eat before and after workouts.</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item" style="width: 33.3333%; padding: 1rem;">
+                        <div class="card" style="background-color: white; border-radius: 0.25rem; display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="card_image" style="height: 200px; overflow: hidden;">
+                                <img src="https://media.istockphoto.com/id/1148035886/photo/young-football-players-kicking-ball-on-soccer-field-soccer-horizontal-background-youth-junior.jpg?s=612x612&w=0&k=20&c=fBkrYldjZo9yZP2aWBdygzkYZpT-9hDVPCdR8mZL4YY=" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="card_content" style="padding: 1rem; background: white;">
+                                <h2 class="card_title">Upcoming Sports Events and Menu Specials</h2>
+                                <p class="card_text">Highlights upcoming school sports events and special menu items or discounts available at the mobile restaurant on those days</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item" style="width: 33.3333%; padding: 1rem;">
+                        <div class="card" style="background-color: white; border-radius: 0.25rem; display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="card_image" style="height: 200px; overflow: hidden;">
+                                <img src="https://media.istockphoto.com/id/483621615/photo/soccer-mom-with-daughter-and-husband.jpg?s=612x612&w=0&k=20&c=H-O8-uZ0l3XhIWIjLLLldX95nzkyx-sDeHBDrMCiKe0=" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="card_content" style="padding: 1rem; background: white;">
+                                <h2 class="card_title">Parent and Athlete Testimonials</h2>
+                                <p class="card_text">Shares stories and feedback from parents and student-athletes about their experiences with the mobile restaurant's food and service</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item" style="width: 33.3333%; padding: 1rem;">
+                        <div class="card" style="background-color: white; border-radius: 0.25rem; display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="card_image" style="height: 200px; overflow: hidden;">
+                                <img src="https://media.istockphoto.com/id/1138183178/photo/girls-basketball-players-eating-pizza-with-coach-after-wining-a-trophy.jpg?s=612x612&w=0&k=20&c=_9jTqT2rsH3B2Kzvya99Ri_fMlaN0_Gvxb6ABsNpkq0=" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="card_content" style="padding: 1rem; background: white;">
+                                <h2 class="card_title">Seasonal and Local Ingredients Spotlight</h2>
+                                <p class="card_text">Showcases seasonal fruits and vegetables or local produce used in the menu, emphasizing freshness and supporting local farmers</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item" style="width: 33.3333%; padding: 1rem;">
+                        <div class="card" style="background-color: white; border-radius: 0.25rem; display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="card_image" style="height: 200px; overflow: hidden;">
+                                <img src="https://media.istockphoto.com/id/1160008939/photo/team-of-successful-workers.jpg?s=612x612&w=0&k=20&c=pM6TuWavoAEUpmKBc1iziuOKxX9nNArqI55levhlj5s=" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="card_content" style="padding: 1rem; background: white;">
+                                <h2 class="card_title">Nutrition Workshops and Cooking Classes</h2>
+                                <p class="card_text">Announces dates and details for upcoming workshops and classes focused on teaching athletes and parents about healthy eating and cooking</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item" style="width: 33.3333%; padding: 1rem;">
+                        <div class="card" style="background-color: white; border-radius: 0.25rem; display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="card_image" style="height: 200px; overflow: hidden;">
+                                <img src="https://media.istockphoto.com/id/1132982956/photo/girls-basketball-players-eating-pizza-with-coach-after-wining-a-tournament.jpg?s=612x612&w=0&k=20&c=qIZR45tHOP7BrU3hr3l4e2V3Bhby2Dr39mALVyj-pG0=" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="card_content" style="padding: 1rem; background: white;">
+                                <h2 class="card_title">Weekly Featured Athlete and Favorite Meal</h2>
+                                <p class="card_text">Profiles a student-athlete each week, sharing their favorite meal from the mobile restaurant and how it helps fuel their performance</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <h3 class="made_by">Made with ♡</h3>
+        </div>
+    </section>
+
+    <!-- EVENT SECTION
+            <section class="section event bg-black-10" aria-label="event">
+                <div class="container">
+                    <p class="section-subtitle label-2 text-center">Recent Updates</p>
+                    <h2 class="section-title headline-1 text-center">Upcoming Event</h2>
+
+                    <ul class="grid-list">
+                        <li>
+                            <div class="event-card has-before hover:shine">
+                                <div class="card-banner img-holder"style="width:600px; height: 400px;"
+                                    <img src="./images/event-1.jpg" style="width:600px;height:400px;"  loading="lazy" alt="Flavour so good you'll try to eat with your eyes." class="img-cover">
+                                    <time class="publish-date label-2" datetime="2022-09-15">15/09/2024</time>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-subtitle label-2 text-center">Sports Tournament Catering</p>
+                                    <h3 class="card-title title-2 text-center">
+                                        Join us for the upcoming soccer tournament where our mobile restaurant will be serving
+                                        delicious meals to keep the players energized and the spectators satisfied!
+                                    </h3>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="event-card has-before hover:shine">
+                                <div class="card-banner img-holder" style="width:600px; height: 400px;">
+                                    <img src="./images/event-2.jpg"  style="width:600px;height:400px;" loading="lazy" alt="Flavour so good you'll try to eat with your eyes." class="img-cover">
+                                    <time class="publish-date label-2" datetime="2022-09-08">08/09/2024</time>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-subtitle label-2 text-center">Family Fun Day</p>
+                                    <h3 class="card-title title-2 text-center">
+                                        Mark your calendars for our upcoming Family Fun Day event! Our mobile restaurant will be offering
+                                        a variety of tasty treats for soccer and rugby fans, parents, and kids to enjoy together.
+                                    </h3>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+
+                    <a href="#" class="btn btn-primary">
+                        <span class="text text-1">View Our Blog</span>
+                        <span class="text text-2" aria-hidden="true">View Our Blog</span>
+                    </a>
+                </div>
+            </section>
+
+
+        </article>
+
+    </main> -->
+    <!-- FOOTER -->
+    <footer class="footer section has-bg-image text-center" style="background-image: url('./images/footer-bg.jpg')">
+        <div class="container">
+            <div class="footer-top grid-list">
+                <div class="footer-brand has-before has-after">
+                    <a href="#" class="logo">
+                        <img src="./images/LOGO1.png" width="160" height="50" loading="lazy" alt="grilli home">
+                    </a>
+                    <address class="body-4">
+                        5 Link Rd, Westville, Durban, 3629, SA
+                    </address>
+                    <a href="mailto:booking@grilli.com" class="body-4 contact-link">booking@TastyTreats.com</a>
+                    <a href="tel:+88123123456" class="body-4 contact-link">Booking Request : +27 31 557 867</a>
+                    <p class="body-4">
+                        Open : 09:00 am - 01:00 pm
+                    </p>
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+                    <p class="title-1">Get News & Offers</p>
+                    <p class="label-1">
+                        Subscribe us & Get <span class="span">25% Off.</span>
+                    </p>
+                    <form action="" class="input-wrapper">
+                        <div class="icon-wrapper">
+                            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                            <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">
+                            <span class="text text-1">Subscribe</span>
+                            <span class="text text-2" aria-hidden="true">Subscribe</span>
+                        </button>
+                    </form>
+                </div>
+
+                <ul class="footer-list">
+                    <li>
+                        <a href="SignUp.aspx" class="label-2 footer-link hover-underline">SignUp</a>
+                    </li>
+                    <li>
+                        <a href="Login.aspx" class="label-2 footer-link hover-underline">Login</a>
+                    </li>
+                    <li>
+                        <a href="index.aspx" class="label-2 footer-link hover-underline">Home</a>
+                    </li>
+                    <li>
+                        <a href="Schedule.aspx" class="label-2 footer-link hover-underline">Schedule</a>
+                    </li>
+                    <li>
+                        <a href="Statistics.aspx" class="label-2 footer-link hover-underline">Statistics</a>
+                    </li>
+                    <li>
+                        <a href="R.aspx" class="label-2 footer-link hover-underline">Restaurant</a>
+                    </li>
+                    <li>
+                        <a href="Cart.aspx" class="label-2 footer-link hover-underline">Shopping Cart</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-list">
+                    <li>
+                        <a href="#" class="label-2 footer-link hover-underline">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#" class="label-2 footer-link hover-underline">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="#" class="label-2 footer-link hover-underline">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
+                    </li>
+                    <li>
+                        <a href="#" class="label-2 footer-link hover-underline">Google Map</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm" class="checkout-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="creditCard">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="cash">Cash on Delivery</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                    </div>
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <p id="orderItem">Item: </p>
+                        <p id="orderPrice">Price: R</p>
+                        <p id="orderTotal">Total: R</p>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="modal-btn continue-shopping">Continue Shopping</button>
+                    <button type="submit" class="modal-btn place-order">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- CONFIRMATION MODAL -->
+    <div id="confirmationModal" class="confirmation-modal">
+        <div class="confirmation-content">
+            <h2>Order Confirmation</h2>
+            <div class="confirmation-details" id="confirmationDetails">
+                <!-- Order details will be inserted here -->
+            </div>
+            <button class="modal-btn place-order" id="closeConfirmation">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for the website functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navigation toggle functionality
+            const navToggler = document.querySelectorAll('[data-nav-toggler]');
+            const navbar = document.querySelector('[data-navbar]');
+            const overlay = document.querySelector('[data-overlay]');
+            const header = document.querySelector('[data-header]');
+
+            for (let i = 0; i < navToggler.length; i++) {
+                navToggler[i].addEventListener('click', function () {
+                    navbar.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                    document.body.classList.toggle('nav-active');
+                });
+            }
+
+            // Header active on scroll
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 100) {
+                    header.classList.add('active');
+                } else {
+                    header.classList.remove('active');
+                }
+            });
+
+            // Back to top button
+            const backTopBtn = document.querySelector('[data-back-top-btn]');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 500) {
+                    backTopBtn.classList.add('active');
+                } else {
+                    backTopBtn.classList.remove('active');
+                }
+            });
+
+            // Hero slider functionality
+            const heroSlider = document.querySelector('[data-hero-slider]');
+            const heroSliderItems = document.querySelectorAll('[data-hero-slider-item]');
+            const heroSliderPrevBtn = document.querySelector('[data-prev-btn]');
+            const heroSliderNextBtn = document.querySelector('[data-next-btn]');
+            let currentSlidePos = 0;
+            let lastActiveSliderItem = heroSliderItems[0];
+
+            const updateSliderPos = () => {
+                lastActiveSliderItem.classList.remove('active');
+                heroSliderItems[currentSlidePos].classList.add('active');
+                lastActiveSliderItem = heroSliderItems[currentSlidePos];
+            };
+
+            const slideNext = () => {
+                if (currentSlidePos >= heroSliderItems.length - 1) {
+                    currentSlidePos = 0;
+                } else {
+                    currentSlidePos++;
+                }
+                updateSliderPos();
+            };
+
+            heroSliderNextBtn.addEventListener('click', slideNext);
+
+            const slidePrev = () => {
+                if (currentSlidePos <= 0) {
+                    currentSlidePos = heroSliderItems.length - 1;
+                } else {
+                    currentSlidePos--;
+                }
+                updateSliderPos();
+            };
+
+            heroSliderPrevBtn.addEventListener('click', slidePrev);
+
+            // Auto slide
+            let autoSlideInterval;
+            const autoSlide = () => {
+                autoSlideInterval = setInterval(() => {
+                    slideNext();
+                }, 7000);
+            };
+
+            autoSlide();
+
+            // Stop auto slide on mouseover
+            heroSlider.addEventListener('mouseover', () => {
+                clearInterval(autoSlideInterval);
+            });
+
+            // Restart auto slide on mouseleave
+            heroSlider.addEventListener('mouseleave', () => {
+                autoSlide();
+            });
+
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            const checkoutModal = document.getElementById('checkoutModal');
+            const closeModal = document.querySelector('.close-modal');
+            const continueShoppingBtn = document.querySelector('.continue-shopping');
+            const checkoutForm = document.getElementById('checkoutForm');
+            const confirmationModal = document.getElementById('confirmationModal');
+            const closeConfirmationBtn = document.getElementById('closeConfirmation');
+            const orderItem = document.getElementById('orderItem');
+            const orderPrice = document.getElementById('orderPrice');
+            const orderTotal = document.getElementById('orderTotal');
+            const confirmationDetails = document.getElementById('confirmationDetails');
+            const quantityInput = document.getElementById('quantity');
+
+            let currentMeal = '';
+            let currentPrice = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    currentMeal = this.getAttribute('data-meal');
+                    currentPrice = parseFloat(this.getAttribute('data-price'));
+
+                    orderItem.textContent = 'Item: ' + currentMeal;
+                    orderPrice.textContent = 'Price: R' + currentPrice.toFixed(2);
+                    updateOrderTotal();
+
+                    checkoutModal.style.display = 'block';
+                });
+            });
+
+            quantityInput.addEventListener('change', updateOrderTotal);
+
+            function updateOrderTotal() {
+                const quantity = parseInt(quantityInput.value);
+                const total = currentPrice * quantity;
+                orderTotal.textContent = 'Total: R' + total.toFixed(2);
+            }
+
+            closeModal.addEventListener('click', function () {
+                checkoutModal.style.display = 'none';
+            });
+
+            continueShoppingBtn.addEventListener('click', function () {
+                checkoutModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function (event) {
+                if (event.target == checkoutModal) {
+                    checkoutModal.style.display = 'none';
+                }
+                if (event.target == confirmationModal) {
+                    confirmationModal.style.display = 'none';
+                }
+            });
+
+            checkoutForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                const fullName = formData.get('fullName');
+                const email = formData.get('email');
+                const phone = formData.get('phone');
+                const paymentMethod = formData.get('paymentMethod');
+                const quantity = formData.get('quantity');
+                const total = (currentPrice * parseInt(quantity)).toFixed(2);
+
+                // Create confirmation message
+                const confirmationHTML = `
+                    <p><strong>Thank you for your order, ${fullName}!</strong></p>
+                    <p><strong>Order Details:</strong></p>
+                    <p>Item: ${currentMeal}</p>
+                    <p>Quantity: ${quantity}</p>
+                    <p>Total: R${total}</p>
+                    <p><strong>Contact Information:</strong></p>
+                    <p>Email: ${email}</p>
+                    <p>Phone: ${phone}</p>
+                    <p>Payment Method: ${paymentMethod}</p>
+                `;
+
+                confirmationDetails.innerHTML = confirmationHTML;
+
+                // Show confirmation modal
+                checkoutModal.style.display = 'none';
+                confirmationModal.style.display = 'block';
+
+                // Reset form
+                this.reset();
+            });
+
+            closeConfirmationBtn.addEventListener('click', function () {
+                confirmationModal.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
