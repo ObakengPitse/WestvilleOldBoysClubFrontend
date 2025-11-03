@@ -405,7 +405,7 @@
               email: byId('email').value.trim(),
               phone: byId('phone').value.trim(),
               paymentMethod: byId('paymentMethod').value,
-              status: 'Received',
+              status: 'Pending',
               items: cart.map(i => ({ id: i.id, name: i.name, qty: i.qty, price: i.price })),
               total: cart.reduce((s, i) => s + i.qty * i.price, 0),
               createdAt: new Date().toISOString()

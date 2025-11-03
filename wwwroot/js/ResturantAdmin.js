@@ -250,10 +250,11 @@ document.getElementById("searchFood").addEventListener("input", (e) => {
 document.addEventListener("DOMContentLoaded", () => {
     const orderTableBody = document.getElementById("orderTableBody");
     const apiUrl = "https://wob-soccer-website.onrender.com/orders/api/v1/get-all-orders";
+    const updateStatusUrl = "https://wob-soccer-website.onrender.com/orders/api/v1/update-status";
 
     // 🔹 Load Orders from API
     async function loadOrders() {
-        orderTableBody.innerHTML = `<tr><td colspan="8" class="text-center text-muted">Loading...</td></tr>`;
+        orderTableBody.innerHTML = `<tr><td colspan="9" class="text-center text-muted">Loading...</td></tr>`;
 
         try {
             const response = await fetch(apiUrl, {
@@ -261,27 +262,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({}) // ✅ POST with empty payload
+                body: JSON.stringify({})
             });
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
             const orders = await response.json();
 
             if (!orders || orders.length === 0) {
-                orderTableBody.innerHTML = `<tr><td colspan="8" class="text-center text-muted">No orders found</td></tr>`;
+                orderTableBody.innerHTML = `<tr><td colspan="9" class="text-center text-muted">No orders found</td></tr>`;
                 return;
             }
 
-            // Sort orders by newest date first
             orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-
-            // Clear table before populating
             orderTableBody.innerHTML = "";
 
             orders.forEach(order => {
+                const statusOptions = ["Pending", "Processing", "Completed", "Cancelled"]
+                    .map(
+                        status => `<option value="${status}" ${order.status === status ? "selected" : ""}>${status}</option>`
+                    )
+                    .join("");
+
                 const orderRow = `
                     <tr>
                         <td>${order.id}</td>
@@ -298,22 +300,23 @@ document.addEventListener("DOMContentLoaded", () => {
                                 View Items
                             </button>
                         </td>
+                        <td>
+                            <select class="form-select form-select-sm order-status" data-order-id="${order.id}">
+                                ${statusOptions}
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="8">
+                        <td colspan="9">
                             <div class="collapse mt-2" id="items${order.id}">
                                 <ul class="list-group">
                                     ${order.items && order.items.length > 0
-                        ? order.items
-                            .map(
-                                item => `
-                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                            ${item.name} (x${item.qty})
-                                                            <span>R${item.price.toFixed(2)}</span>
-                                                        </li>
-                                                    `
-                            )
-                            .join("")
+                        ? order.items.map(item => `
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                ${item.name} (x${item.qty})
+                                                <span>R${item.price.toFixed(2)}</span>
+                                            </li>
+                                        `).join("")
                         : `<li class="list-group-item text-muted text-center">No items</li>`
                     }
                                 </ul>
@@ -324,15 +327,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 orderTableBody.insertAdjacentHTML("beforeend", orderRow);
             });
+
+            // 🔹 Attach change event for status updates
+            document.querySelectorAll(".order-status").forEach(select => {
+                select.addEventListener("change", async (e) => {
+                    const orderId = e.target.dataset.orderId;
+                    const newStatus = e.target.value;
+
+                    try {
+                        const res = await fetch(updateStatusUrl, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({ id: orderId, status: newStatus })
+                        });
+
+                        if (!res.ok) throw new Error(`Status update failed: ${res.status}`);
+
+                        console.log(`Order ${orderId} updated to ${newStatus}`);
+                    } catch (err) {
+                        console.error(err);
+                        alert(`Failed to update order ${orderId} status`);
+                    }
+                });
+            });
+
         } catch (error) {
             console.error("Error loading orders:", error);
-            orderTableBody.innerHTML = `<tr><td colspan="8" class="text-center text-danger">Failed to load orders</td></tr>`;
+            orderTableBody.innerHTML = `<tr><td colspan="9" class="text-center text-danger">Failed to load orders</td></tr>`;
         }
     }
 
-    // 🔹 Auto-load orders on page start
     loadOrders();
 });
+
 // Load all foods automatically when the page is ready
 document.addEventListener("DOMContentLoaded", loadFoods);
 // Load admins automatically when the page is ready
