@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "My Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Orders</title>
+</head>
+<body class="bg-light">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1a3e6a !important">
+        <div class="container">
+            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="MyOrders">My Orders</a>
+            <button class="btn btn-outline-light" id="viewCartBtn">Cart (<span id="cartCount">0</span>)</button>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">My Orders</h5>
+            </div>
+
+            <div class="card-body">
+                <table class="table table-hover align-middle">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Payment</th>
+                            <th>Total (R)</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <tr>
+                            <td colspan="8" class="text-center text-muted">Loading orders...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a class="btn btn-sm btn-primary" asp-controller="Home" asp-action="Resturant">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allOrders = [];
+
+        async function loadOrders() {
+            const tbody = document.getElementById('ordersTableBody');
+            tbody.innerHTML = `<tr><td colspan="8" class="text-center text-muted">Loading...</td></tr>`;
+            const email = localStorage.getItem("email");
+
+            try {
+                const response = await fetch('https://wob-soccer-website.onrender.com/api/v1/get-all-by-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                if (!response.ok) throw new Error('Failed to fetch orders');
+
+                let orders = await response.json();
+
+                // ✅ Sort by most recent date (descending)
+                orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+                allOrders = orders;
+                displayOrders(orders);
+
+            } catch (error) {
+                console.error('Error loading orders:', error);
+                tbody.innerHTML = `<tr><td colspan="8" class="text-center text-danger">Error loading orders.</td></tr>`;
+            }
+        }
+
+        function displayOrders(orders) {
+            const tbody = document.getElementById('ordersTableBody');
+            tbody.innerHTML = '';
+
+            if (orders.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" class="text-center text-muted">No orders found.</td></tr>`;
+                return;
+            }
+
+            orders.forEach(order => {
+                const orderRow = document.createElement('tr');
+                orderRow.innerHTML = `
+                    <td>${order.id}</td>
+                    <td>${order.fullName}</td>
+                    <td>${order.email}</td>
+                    <td>${order.phone}</td>
+                    <td>${order.paymentMethod}</td>
+                    <td>${order.total.toFixed(2)}</td>
+                    <td>${new Date(order.createdAt).toLocaleString()}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="collapse" data-bs-target="#items${order.id}">
+                            View Items
+                        </button>
+                    </td>
+                `;
+
+                const itemsRow = document.createElement('tr');
+                itemsRow.innerHTML = `
+                    <td colspan="8">
+                        <div class="collapse mt-2" id="items${order.id}">
+                            <ul class="list-group">
+                                ${order.items.map(item => `
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        ${item.name} (x${item.qty})
+                                        <span>R${item.price.toFixed(2)}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </td>
+                `;
+
+                tbody.appendChild(orderRow);
+                tbody.appendChild(itemsRow);
+            });
+        }
+
+        // 🚀 Load orders when page loads
+        window.addEventListener('DOMContentLoaded', loadOrders);
+    </script>
+</body>
+</html>

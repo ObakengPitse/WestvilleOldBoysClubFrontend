@@ -27,6 +27,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1a3e6a !important">
         <div class="container">
             <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="MyOrders">My Orders</a>
             <button class="btn btn-outline-light" id="viewCartBtn">Cart (<span id="cartCount">0</span>)</button>
         </div>
     </nav>
@@ -384,6 +385,7 @@
               email: byId('email').value.trim(),
               phone: byId('phone').value.trim(),
               paymentMethod: byId('paymentMethod').value,
+              status: 'Received',
               items: cart.map(i => ({ id: i.id, name: i.name, qty: i.qty, price: i.price })),
               total: cart.reduce((s, i) => s + i.qty * i.price, 0),
               createdAt: new Date().toISOString()

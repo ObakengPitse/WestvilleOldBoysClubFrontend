@@ -1,0 +1,395 @@
+﻿@{
+    ViewData["Title"] = "Resturant Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Online Grocery Store</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar p-3" id="sidebar">
+        <div class="text-center mb-4">
+            <h4>Restaurant Admin</h4>
+            <hr class="bg-light">
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" data-section="admin">
+                    <i class="fas fa-user-shield"></i> Admin
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-section="products">
+                    <i class="fas fa-box-open"></i> Products
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-section="orders">
+                    <i class="fas fa-shopping-cart"></i> Orders
+                </a>
+            </li>
+            <li class="nav-item mt-3">
+                <a id="logoutBtn" class="nav-link text-danger">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+
+        <!-- Admin Section -->
+        <div class="d-none" id="adminSection">
+            <div class="form-section">
+                <h4>Add New Admin</h4>
+                <form id="adminForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="adminName" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="adminName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="adminEmail" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="adminEmail" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="adminPhone" class="form-label">Phone *</label>
+                            <input type="tel" class="form-control" id="adminPhone" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="adminPassword" class="form-label">Password *</label>
+                            <input type="password" class="form-control" id="adminPassword" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Admin</button>
+                </form>
+            </div>
+
+            <div class="data-table">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5>All Admins</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table" id="adminsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Admin data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Admin Section -->
+        <div class="d-none" id="adminSection">
+            <div class="form-section">
+                <h4>Add New Admin</h4>
+                <form id="adminForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="adminName" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="adminName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="adminEmail" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="adminEmail" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="adminPhone" class="form-label">Phone *</label>
+                            <input type="tel" class="form-control" id="adminPhone" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="adminPassword" class="form-label">Password *</label>
+                            <input type="password" class="form-control" id="adminPassword" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Admin</button>
+                </form>
+            </div>
+
+            <div class="data-table">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5>All Admins</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table" id="adminsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Admin data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <div class="d-none" id="productsSection">
+            <div class="form-section">
+                <h4>Add New Food Item</h4>
+                <form id="foodForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label">Food Name *</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="price" class="form-label">Price *</label>
+                            <input type="number" step="0.01" class="form-control" id="price" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="category" class="form-label">Category *</label>
+                            <select id="category" class="form-select" required>
+                                <option value="">Select category</option>
+                                <option value="Burgers">Burgers</option>
+                                <option value="Drinks">Drinks</option>
+                                <option value="Desserts">Desserts</option>
+                                <option value="Sides">Sides</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="imageUrl" class="form-label">Image URL</label>
+                            <input type="url" id="imageUrl" class="form-control" placeholder="https://example.com/image.jpg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea id="description" class="form-control" rows="2"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Food</button>
+                </form>
+            </div>
+
+            <div class="data-table">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5>All Foods</h5>
+                    <input type="text" id="searchFood" class="form-control w-25" placeholder="Search by name or category">
+                </div>
+                <div class="table-responsive">
+                    <table class="table" id="foodTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="foodTableBody">
+                            <tr><td colspan="7" class="text-center text-muted">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Section -->
+        <div class="d-none" id="ordersSection">
+                <div class="data-table">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5>All Orders</h5>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table" id="orderTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Payment</th>
+                                    <th>Total (R)</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orderTableBody">
+                                <tr><td colspan="7" class="text-center text-muted">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // initial data - removed hardcoded data
+
+
+    const sidebarLinks = document.querySelectorAll('.sidebar .nav-link[data-section]');
+    const sections = {
+        customers: document.getElementById('customersSection'),
+        products: document.getElementById('productsSection'),
+        admin: document.getElementById('adminSection'),
+        orders: document.getElementById('ordersSection')
+    };
+
+        // Default show admin section
+    Object.values(sections).forEach(s => {
+        if (s) s.classList.add('d-none');
+    });
+    if (sections.admin) sections.admin.classList.remove('d-none'); // 👈 show admin by default
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const sectionId = this.dataset.section;
+
+            Object.values(sections).forEach(sec => {
+                if (sec) sec.classList.add('d-none');
+            });
+
+            if (sections[sectionId]) {
+                sections[sectionId].classList.remove('d-none');
+            }
+
+            sidebarLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+<!-- Custom CSS -->
+<style>
+    :root {
+        --bg-dark: #1a2131;
+        --btn-primary: #2869ff;
+        --text-light: #ffffff;
+        --card-bg: #2a3447;
+        --success: #28a745;
+        --warning: #ffc107;
+        --danger: #dc3545;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+    }
+    /* Sidebar */
+    .sidebar {
+        background: var(--bg-dark);
+        color: var(--text-light);
+        height: 100vh;
+        position: fixed;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+            .sidebar .nav-link:hover, .sidebar .nav-link.active {
+                background: var(--btn-primary);
+                color: white;
+            }
+
+            .sidebar .nav-link i {
+                margin-right: 10px;
+            }
+    /* Main Content */
+    .main-content {
+        margin-left: 250px;
+        padding: 20px;
+        min-height: 100vh;
+    }
+    /* Cards */
+    .stats-card {
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+        color: white;
+        transition: transform 0.3s;
+    }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+    /* Tables */
+    .data-table {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .status-badge {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .status-pending {
+        background: #fff3cd;
+        color: #856404;
+    }
+
+    .status-completed {
+        background: #d4edda;
+        color: #155724;
+    }
+    /* Forms */
+    .form-section {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    /* Responsive */
+
+</style>
+
+@section Scripts {
+    <script src="~/js/auth.js"></script>
+    <script src="~/js/ResturantAdmin.js"></script>
+}

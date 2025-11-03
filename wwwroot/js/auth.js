@@ -28,8 +28,8 @@
     // === 4. Logout clears session ===
     if (logoutBtn) {
         logoutBtn.addEventListener("click", () => {
-            localStorage.removeItem("userId");
-            localStorage.removeItem("role");
+            localStorage.clear();
+           
             window.location.href = "/Account/Login";
         });
     }

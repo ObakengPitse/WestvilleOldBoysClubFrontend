@@ -17,7 +17,7 @@
         var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
 
         bool hideNavbar = ((currentController == "Account" || currentController == "Home" || currentController == "Admin") &&
-        (currentAction == "Login" || currentAction == "Register" || currentAction == "AdminLogin" || currentAction == "Statistics" || currentAction == "AdminDashboard" || currentAction == "Resturant"));
+        (currentAction == "Login" || currentAction == "Register" || currentAction == "AdminLogin" || currentAction == "Statistics" || currentAction == "AdminDashboard" || currentAction == "Resturant" || currentAction == "RestaurantAdmin" || currentAction == "MyOrders"));
     }
 
     @if (!hideNavbar)

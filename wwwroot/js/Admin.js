@@ -1,7 +1,8 @@
-﻿const apiBaseUrl = "https://wob-soccer-website.onrender.com/user/api/v1/get-all-users"; // Change this to your actual backend URL
+﻿const apiBaseUrl = "https://wob-soccer-website.onrender.com/user/api/v1/get-all-users";
 
     // --- Fetch all customers and populate table ---
-  async function fetchCustomers() {
+async function fetchCustomers() {
+  
   try {
       const response = await fetch(apiBaseUrl, {
           method: "POST",
@@ -36,11 +37,12 @@
 
 // --- Fetch all Admins and populate table ---
 async function fetchAdmins() {
+    const role = "Admin";
     try {
-        const response = await fetch("https://wob-soccer-website.onrender.com/admin/api/v1/get-all-admins", {
+        const response = await fetch("https://wob-soccer-website.onrender.com/admin/api/v1/get-all-by-role", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({}) // Empty payload
+            body: JSON.stringify({role}) // Empty payload
         });
         if (!response.ok) throw new Error("Failed to fetch customers");
         const admins = await response.json();
@@ -97,7 +99,7 @@ document.querySelector("#customerForm").addEventListener("submit", async (e) => 
   }
 });
 
-// --- Add new customer ---
+// --- Add new admin ---
 document.querySelector("#adminForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -168,6 +170,7 @@ async function deleteAdmin(id) {
         alert("Error deleting admin.");
     }
 }
+
 
 // --- Load all customers on page load ---
 document.addEventListener("DOMContentLoaded", fetchCustomers);

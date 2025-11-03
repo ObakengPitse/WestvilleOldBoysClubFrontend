@@ -39,6 +39,12 @@
                 messageBox.textContent = "Login successful! Redirecting...";
                 messageBox.style.color = "green";
 
+                if (data.role === "RestaurantAdmin"){
+                    setTimeout(() => {
+                        window.location.href = "/Admin/RestaurantAdmin";
+                    }, 1500);
+                    return;
+                }
                 // Redirect after short delay
                 setTimeout(() => {
                     window.location.href = "/Admin/AdminDashboard";

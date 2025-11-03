@@ -33,6 +33,7 @@
             if (data.userId) {
                 // Save token in localStorage or sessionStorage
                 localStorage.setItem("userId", data.userId);
+                localStorage.setItem("email", data.emailAddress);
                 localStorage.setItem("fullName", data.fullName);
                 localStorage.setItem("role", data.role || "User");
 

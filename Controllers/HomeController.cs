@@ -28,6 +28,11 @@ namespace WestvilleOldBoysClub.Controllers
             return View();
         }
 
+        public IActionResult MyOrders()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

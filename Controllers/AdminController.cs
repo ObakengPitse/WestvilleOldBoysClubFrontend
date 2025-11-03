@@ -8,5 +8,10 @@ namespace WestvilleOldBoysClub.Controllers
         {
             return View();
         }
+
+        public IActionResult RestaurantAdmin()
+        {
+            return View();
+        }
     }
 }
