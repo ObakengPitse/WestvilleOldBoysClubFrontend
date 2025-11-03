@@ -367,6 +367,26 @@
           }
         }
 
+        //------- POPULATE CART ON LOAD -----
+        document.addEventListener("DOMContentLoaded", () => {
+            const fullNameInput = document.getElementById("fullName");
+            const emailInput = document.getElementById("email");
+
+            // Get values from localStorage
+            const storedFullName = localStorage.getItem("fullName");
+            const storedEmail = localStorage.getItem("email");
+
+            if (storedFullName) {
+                fullNameInput.value = storedFullName;
+                fullNameInput.readOnly = true; 
+            }
+
+            if (storedEmail) {
+                emailInput.value = storedEmail;
+                emailInput.readOnly = true; 
+            }
+        });
+
         // ----- EVENTS -----
         document.addEventListener('DOMContentLoaded', () => {
           fetchFoods();
